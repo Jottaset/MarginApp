@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MarginApp"
+             x:Class="MarginApp.MainPage">
+    
+    <StackLayout BackgroundColor="Gray"
+                 Orientation="Vertical">
+        
+        <!-- Place new controls here -->
+         <Label Text="Slider Master App"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               FontSize="35"
+               TextColor="White"
+               FontAttributes="Bold"
+               Margin="10, 90, 10, 5"
+               
+               />
+        
+        <Slider x:Name="slider_stop"
+                Margin="20, 50, 20, 5"
+                ThumbColor="Lime"
+                Scale="1"
+                ValueChanged="Handle_ValueChanged"
+                Minimum="0"
+                Maximum="360"
+                
+                />
+        
+        <Label Text="ESTAVEL"
+               x:Name="label_rodante"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               TextColor="White"
+               FontSize="20"
+               BindingContext="{x:Reference Name=slider_stop}"
+               Rotation="{Binding Path=Value}"
+               
+               
+               />
+        
+         <Label Text="{x:Reference Name=slider_stop}}"
+                
+                x:Name="label_valueSlider"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                FontSize="80"
+                TextColor="White"
+                FontAttributes="Bold"
+                Margin="10, 0, 10, 50"
+               
+               />
+       
+               
+    </StackLayout>
+</ContentPage>
